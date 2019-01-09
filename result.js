@@ -29,7 +29,7 @@
     });
   }
 
-  if (!allLoaded) {
+  if (allLoaded) {
     // AdBlocker is OFF
     var result = document.getElementById('result');
     result.classList.remove('warning');
