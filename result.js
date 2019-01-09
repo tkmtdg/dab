@@ -1,11 +1,5 @@
 (function () {
-  if (
-    !window.dabResult ||
-    !window.dabResult.length
-  ) {
-    // AdBlocker is ON
-    return;
-  }
+  window.dabResult = window.dabResult || [];
 
   var testFiles = document.getElementsByClassName('dabtestfile');
 
@@ -19,15 +13,15 @@
     return false;
   };
 
-  var loadedAtLeastOne = false;
+  var allLoaded = true;
 
   var dumpData = [];
   for (var i = 0; i < testFiles.length; i++) {
     var testFile = testFiles[i];
     var src = testFile.getAttribute('src');
     var loaded = getResult(src);
-    if (loaded) {
-      loadedAtLeastOne = true;
+    if (!loaded) {
+      allLoaded = false;
     }
     dumpData.push({
       src: src,
@@ -35,7 +29,7 @@
     });
   }
 
-  if (loadedAtLeastOne) {
+  if (!allLoaded) {
     // AdBlocker is OFF
     var result = document.getElementById('result');
     result.classList.remove('warning');
