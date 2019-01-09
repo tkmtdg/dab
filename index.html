@@ -6,11 +6,22 @@
   <title>dab - Detect AdBlocker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/picnic">
+  <style>
+    body {
+      padding: 2rem
+    }
+  </style>
 </head>
 
 <body>
-  <p>AdBlocker is <span id="result" class="label warning">ON</span></p>
-  <pre id="dump"></pre>
+  <main class="flex one">
+    <div>
+      <p>AdBlocker is <span id="result" class="label warning">ON</span></p>
+    </div>
+    <div>
+      <pre id="dump"></pre>
+    </div>
+  </main>
 
   <script src="/dfp.js" class="dabtestfile"></script>
   <script src="/ads.js" class="dabtestfile"></script>
