@@ -6,9 +6,7 @@
     window.dabResult.length === n
   ) {
     // AdBlocker is OFF
-    return;
+    var result = document.getElementById('result');
+    result.innerHTML = 'OFF';
   }
-
-  var result = document.getElementById('result');
-  result.innerHTML = 'OFF';
 })();
