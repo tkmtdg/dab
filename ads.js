@@ -1,7 +1,7 @@
 (function () {
   window.dabResult = window.dabResult || [];
   window.dabResult.push({
-    filename: 'dfp.js',
+    filename: 'ads.js',
     loaded: true
   });
 })();
