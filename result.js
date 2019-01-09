@@ -12,7 +12,7 @@
   var getResult = function (filname) {
     for (var i = 0; i < window.dabResult.length; i++) {
       var result = window.dabResult[i];
-      if (result.filename === filename) {
+      if (result.src === src) {
         return result.loaded;
       }
     }
@@ -24,13 +24,13 @@
   var dumpData = [];
   for (var i = 0; i < testFiles.length; i++) {
     var testFile = testFiles[i];
-    var filename = testFile.getAttribute('src');
-    var loaded = getResult(filename);
+    var src = testFile.getAttribute('src');
+    var loaded = getResult(src);
     if (loaded) {
       loadedAtLeastOne = true;
     }
     dumpData.push({
-      filename: filename,
+      src: src,
       loaded: loaded
     });
   }
