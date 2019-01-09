@@ -9,4 +9,7 @@
     var result = document.getElementById('result');
     result.innerHTML = 'OFF';
   }
+
+  var dump = document.getElementById('dump');
+  dump.innerHTML = JSON.stringify(window.dabResult, null, 2);
 })();
