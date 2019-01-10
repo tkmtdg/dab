@@ -32,8 +32,7 @@
   if (allLoaded) {
     // AdBlocker is OFF
     var result = document.getElementById('result');
-    result.classList.remove('warning');
-    result.classList.add('success');
+    result.classList.remove('error');
     result.innerHTML = 'OFF';
   }
 
