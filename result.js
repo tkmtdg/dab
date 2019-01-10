@@ -1,8 +1,6 @@
 (function () {
   window.dabResult = window.dabResult || [];
 
-  var testFiles = document.getElementsByClassName('dabtestfile');
-
   var getResult = function (filname) {
     for (var i = 0; i < window.dabResult.length; i++) {
       var result = window.dabResult[i];
@@ -14,8 +12,8 @@
   };
 
   var allLoaded = true;
-
   var dumpData = [];
+  var testFiles = document.getElementsByClassName('dabtestfile');
   for (var i = 0; i < testFiles.length; i++) {
     var testFile = testFiles[i];
     var src = testFile.getAttribute('src');
@@ -35,6 +33,8 @@
     result.classList.remove('error');
     result.innerHTML = 'OFF';
   }
+  var status = document.getElementById('status');
+  status.classList.remove('hidden');
 
   var dump = document.getElementById('dump');
   dump.innerHTML = JSON.stringify(dumpData, null, 2);

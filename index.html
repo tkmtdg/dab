@@ -10,15 +10,20 @@
     body {
       padding: 2rem
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
   <main class="flex one">
-    <div>
-      <p>AdBlocker is <span id="result" class="label error">ON</span></p>
+    <div id="status" class="hidden">
+      <h2>AdBlocker is <span id="result" class="label error">ON</span></h2>
     </div>
     <div>
+      <h3>test result</h3>
       <pre id="dump"></pre>
     </div>
   </main>
